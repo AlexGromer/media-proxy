@@ -11,8 +11,8 @@ const getFetchOpts = (
 ) => {
   return {
     headers: {
-      Referer: referer,
-      Origin: origin,
+      ...(referer ? { Referer: referer } : {}),
+      ...(origin ? { Origin: origin } : {}),
       "User-Agent": config.utility.userAgent,
       ...headers,
     },

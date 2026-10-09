@@ -1,3 +1,9 @@
+# 1.1.7
+
+- Fixed set empty string for `Origin` and `Referer` headers if they aren't provided
+- Fixed `+` in base64-encoded nested URLs being lost
+- Bump depends
+
 # 1.1.6
 
 - Using base64 format for proxying nested links in m3u8/ts

@@ -84,8 +84,8 @@ export abstract class ProxyService {
         const prefix = isTsLink ? this.TS_PREFIX : this.M3U8_PREFIX;
         if (all && trimmedLine.startsWith("http")) {
           // https://yourproxy.com/?url=https://somevideo.m3u8&all=yes
-          return `${this.SCHEMA}${host}${prefix}?url=${btoa(
-            trimmedLine,
+          return `${this.SCHEMA}${host}${prefix}?url=${encodeURIComponent(
+            btoa(trimmedLine),
           )}&format=base64`;
         }
 
